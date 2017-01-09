@@ -1,4 +1,4 @@
-    // Load plugins
+    // Loading pugins to the gulpgile
     var gulp = require('gulp'),
         sass = require('gulp-ruby-sass'),
         autoprefixer = require('gulp-autoprefixer'),
@@ -18,9 +18,13 @@
         browserSync = require('browser-sync').create(),
         app = assemble();
 
+        //set of javascirpt file to be merged as array
     var jsfilelist = ['src/scripts/vendor/jquery-3.1.1.js','src/scripts/components/globalheader.js',];
 
-    // Styles
+
+    // task to compile scss file and generate css
+    // minify css
+    //compress css
     gulp.task('styles', function() {
       return sass('src/styles/main.scss', { style: 'expanded' })
         .pipe(autoprefixer('last 2 version'))
@@ -30,7 +34,8 @@
         .pipe(gulp.dest('dist/styles'));
     });
 
-    // Scripts
+    // Scripts task to combile all js files into single file
+    //and ninify it.
     gulp.task('scripts', function() {
       return gulp.src(jsfilelist)
         .pipe(concat('main.js'))
@@ -40,7 +45,9 @@
         .pipe(gulp.dest('dist/scripts'));
     });
 
-    // Images
+    // Images task is optional
+    // This task to copy images to dist folder
+    // and optimize image sizes
     gulp.task('images', function() {
       return gulp.src('src/images/**/*')
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
@@ -48,12 +55,13 @@
     });
 
 
-    // Clean
+    // Clean task to remove all subfolders under dist
     gulp.task('clean', function() {
       return del(['dist/styles', 'dist/scripts', 'dist/images']);
     });
 
 
+    //sub task to assembler.
     gulp.task('load', function(cb) {
       app.partials('src/templates/partials/*.hbs');
       app.layouts('src/templates/layouts/*.hbs');
@@ -62,6 +70,8 @@
       cb();
     });
 
+
+    //assemble task to create pages using hbs and configuration
     gulp.task('assemble', ['load'], function() {
       return app.toStream('pages')
         .pipe(app.renderFile())
@@ -70,6 +80,7 @@
         .pipe(app.dest('dist'));
         //.pipe(notify({ message: 'Assemble task complete' }));
     });
+
 
     // Static server
     gulp.task('browser-sync', function() {
@@ -107,3 +118,6 @@
     gulp.task('default', ['clean'], function() {
       gulp.start('styles', 'scripts', 'images','assemble','watch','browser-sync');
     });
+
+
+    //Thanks
