@@ -1,0 +1,42 @@
+{
+  "name": "gulpuix",
+  "version": "1.0.0",
+  "description": "gulpuix is node package for the front-end developers to build web pages with ease using gulp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naveenkumarpg/gulpuix.git"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JS",
+    "Gulp",
+    "Handlebars",
+    "Jquery",
+    "Assembler."
+  ],
+  "author": "Naveen Kumar PG <naveenkumarpg@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naveenkumarpg/gulpuix/issues"
+  },
+  "homepage": "https://github.com/naveenkumarpg/gulpuix#readme",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-uglify": "^2.0.0"
+  }
+}
