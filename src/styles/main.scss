@@ -1,1 +1,26 @@
-@import "scss/components/globalfooter.scss"
+/*!
+ 	* Copyright (c) 2017, *******************, All rights reserved.
+	* Name of the file "main.css"
+	* This file contains cascading styles for the comlete site.
+    *
+	* @project   ***************************
+    * @date      09/01/2017
+	* @author    Naveen Kumar,<nkumar54@sapient.com>
+	* @licensor  MM / CM
+*/
+
+
+//importing variables files
+@import "scss/utilities/_variables.scss";
+
+//importing mixins
+@import "scss/utilities/_mixins.scss";
+
+//importing Normalize styles
+@import "scss/utilities/_normalize.scss";
+
+//importing grid system only from bootstrap
+@import "scss/utilities/_grid.scss";
+
+//importing global header styles
+@import "scss/components/_globalheader.scss";

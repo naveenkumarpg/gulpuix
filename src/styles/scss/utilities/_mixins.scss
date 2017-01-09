@@ -1,0 +1,63 @@
+@mixin xsmobile {
+    @media (max-width: $mobile-min) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile-max) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (min-width: $tab-min) and (max-width: $tab-max) {
+        @content;
+    }
+}
+
+@mixin tab-and-mobile {
+    @media (max-width: $tab-max) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-min){
+        @content;
+    }
+}
+
+
+@mixin large {
+    @media (min-width: $large-min) {
+        @content;
+    }
+}
+
+@mixin linear-gradient($top, $bottom, $start-percent, $stop-percent){
+    background: linear-gradient(to bottom,  $top $start-percent,$bottom $stop-percent); /* W3C */
+}
+
+@mixin transform($transforms) {
+       -moz-transform: $transforms;
+         -o-transform: $transforms;
+        -ms-transform: $transforms;
+        -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+@mixin borderradius($value){
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
+}

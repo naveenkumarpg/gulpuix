@@ -1,0 +1,37 @@
+/*
+ 	* Copyright (c) 2017, *******************, All rights reserved.
+	* Name of the file "_variables.scss"
+	* This file contains scss variables.
+    *
+	* @project   ***************************
+    * @date      09/01/2017
+	* @author    Naveen Kumar,<nkumar54@sapient.com>
+	* @licensor  MM / CM
+*/
+
+$maxWidth				: 1920px;
+
+//Breakpoints
+$mobile-min             : 320px;
+$mobile-max             : 767px;
+
+$tab-min                : $mobile-max + 1px;
+$tab-max                : 991px;
+
+$desktop-min            :$tab-max + 1px;
+$desktop-max            :1199px;
+
+$large-min              :$desktop-max + 1px;
+$large-max              :1440px;
+
+$xlarge-min             :$maxWidth + 1px;
+
+$gutterspace            : 48px;
+$gutterhalf             : ($gutterspace/2);
+
+
+
+// Colors
+$white              : #ffffff;
+$black				: #000000;
+$gray-light         : #cccccc;
