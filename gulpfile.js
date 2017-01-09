@@ -13,6 +13,7 @@
         livereload = require('gulp-livereload'),
         del = require('del');
 
+
     // Styles
     gulp.task('styles', function() {
       return sass('src/styles/main.scss', { style: 'expanded' })
