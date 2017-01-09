@@ -13,6 +13,7 @@
         livereload = require('gulp-livereload'),
         del = require('del');
 
+    var jsfilelist = ['src/scripts/vendor/jquery-3.1.1.js','src/scripts/components/globalheader.js',];
 
     // Styles
     gulp.task('styles', function() {
@@ -27,9 +28,7 @@
 
     // Scripts
     gulp.task('scripts', function() {
-      return gulp.src('src/scripts/**/*.js')
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('default'))
+      return gulp.src(jsfilelist)
         .pipe(concat('main.js'))
         .pipe(gulp.dest('dist/scripts'))
         .pipe(rename({ suffix: '.min' }))
