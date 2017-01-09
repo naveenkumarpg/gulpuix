@@ -1711,3 +1711,46 @@ template {
 .overflow-hidden {
   overflow: hidden;
 }
+
+/*
+    * Copyright (c) 2016, naveenkumarpg.com, All rights reserved.
+    * Name of the file "common.js"
+    * This file contains changes related to the global and common components.
+    *
+    * @project   open source project for front-end developement
+    * @date      2016-09-10
+    * @author    Naveen Kumar PG, Gmail <naveenkumarpg@gmail.com>
+    * @licensor  naveenkumarpg.com
+    * @site      http://www.naveenkumarpg.com/
+*/
+.global-header, .global-footer {
+  background: #3ec7c2;
+  fill: #3ec7c2;
+  padding: 20px 0px;
+  color: #fff;
+}
+
+.center {
+  text-align: center;
+}
+
+.main-content {
+  padding: 20px 0px;
+}
+
+.caption {
+  padding: 40px 0px;
+}
+
+.global-menu {
+  float: right;
+}
+.global-menu li {
+  display: inline;
+  list-style: none;
+}
+.global-menu li a {
+  color: #fff;
+  font-size: 13px;
+  padding: 0px 20px;
+}

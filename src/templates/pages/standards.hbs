@@ -1,0 +1,117 @@
+---
+title: Standards
+tags: Pages
+layout: default.hbs
+---
+
+<style media="screen">
+    code{
+        color: #999 !important;
+        line-height: 9px;
+    }
+</style>
+
+
+<section>
+    <div class="container">
+
+<h6>File Info</h6>
+<pre>
+<code>
+    /*!
+        * Copyright (c) 2016, naveenkumarpg.com, All rights reserved.
+        * Name of the file "gruntfile.js"
+        * This file contains the code for automation of minification and compression page creation script tasks
+        *
+        * @Project   open source project for front-end developement
+        * @Date      2016-09-10
+        * @Desig     Senior Associate Level2
+        * @Author    Naveen Kumar PG, Gmail &lt;naveenkumarpg@gmail.com&gt;
+    */
+</code>
+</pre>
+
+
+
+<h6>HTML Comments</h6>
+<pre>
+<code>
+    &lt;!-- Header component Starts here --&gt;
+
+        &lt;section&gt;
+            &lt;div class="container"&gt;
+                &lt;p class="center"&gt;
+                    &lt;img src="../images/most-powerful-quotes-5.jpg" alt="" /&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+    &lt;!-- Header component Ends here --&gt;
+</code>
+</pre>
+
+
+
+<h6>Javascript Code hinting</h6>
+<pre>
+<code>
+    /*
+        @ arg1 : is type of Object and used for some thing
+        @ arg2 : is type of Object and used for some thing
+    */
+    isuserLoggedin: function(arg1, arg2){
+        var usercookies = PGE.util.getCookie("PGEUSERCOOKIE");
+        var smsession = PGE.util.getCookie("SMSESSION");
+
+        //if user is logged in only
+        if((usercookies) && (smsession)){
+            return true;
+        }else{
+            PGE.globalHeader.clearintervals();
+            $('#timedout-warning, #timedout').modal('hide');
+            return false;
+        }
+    }
+</code>
+</pre>
+
+
+<h6>CSS Comments</h6>
+<pre>
+<code>
+    // Header component styles starts Here
+    body {
+      font-size: 62.5%  /* 1em = 10px */
+    }
+    .center{
+        text-align: center;
+    }
+    .main-content{
+        padding: 20px 0px;
+    }
+    .caption{
+        padding: 40px 0px;
+    }
+    // Header component styles ends Here
+</code>
+</pre>
+
+
+
+<h6>Component Naming conventions</h6>
+<pre>
+<code>
+
+    Billboard.hbs
+    Billboard.css
+    billboard.html
+
+    GlobalHeader.hbs
+    GlobalHeader.css
+    globalheader.html
+
+</code>
+</pre>
+
+    </div>
+</section>

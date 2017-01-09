@@ -11,7 +11,12 @@
         notify = require('gulp-notify'),
         cache = require('gulp-cache'),
         livereload = require('gulp-livereload'),
-        del = require('del');
+        del = require('del'),
+        htmlmin = require('gulp-htmlmin'),
+        extname = require('gulp-extname'),
+        assemble = require('assemble'),
+        browserSync = require('browser-sync').create(),
+        app = assemble();
 
     var jsfilelist = ['src/scripts/vendor/jquery-3.1.1.js','src/scripts/components/globalheader.js',];
 
@@ -22,8 +27,7 @@
         .pipe(gulp.dest('dist/styles'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
-        .pipe(gulp.dest('dist/styles'))
-        .pipe(notify({ message: 'Styles task complete' }));
+        .pipe(gulp.dest('dist/styles'));
     });
 
     // Scripts
@@ -33,16 +37,14 @@
         .pipe(gulp.dest('dist/scripts'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
-        .pipe(gulp.dest('dist/scripts'))
-        .pipe(notify({ message: 'Scripts task complete' }));
+        .pipe(gulp.dest('dist/scripts'));
     });
 
     // Images
     gulp.task('images', function() {
       return gulp.src('src/images/**/*')
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-        .pipe(gulp.dest('dist/images'))
-        .pipe(notify({ message: 'Images task complete' }));
+        .pipe(gulp.dest('dist/images'));
     });
 
 
@@ -52,10 +54,36 @@
     });
 
 
+    gulp.task('load', function(cb) {
+      app.partials('src/templates/partials/*.hbs');
+      app.layouts('src/templates/layouts/*.hbs');
+      app.pages('src/templates/pages/*.hbs');
+      app.data('src/data/*.{json,yml}');
+      cb();
+    });
+
+    gulp.task('assemble', ['load'], function() {
+      return app.toStream('pages')
+        .pipe(app.renderFile())
+        .pipe(htmlmin())
+        .pipe(extname())
+        .pipe(app.dest('dist'));
+    });
+
+    // Static server
+    gulp.task('browser-sync', function() {
+        browserSync.init({
+            server: {
+                baseDir: "./dist"
+            }
+        });
+    });
+
     // Default task
     gulp.task('default', ['clean'], function() {
-      gulp.start('styles', 'scripts', 'images');
+      gulp.start('styles', 'scripts', 'images','assemble','browser-sync');
     });
+
 
 
     // Watch

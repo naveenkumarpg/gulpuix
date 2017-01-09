@@ -1,0 +1,18 @@
+---
+component: List
+---
+
+
+<div class="containerfluid">
+    <div class="container">
+        <p>This page rendered using json data, which is in data folder, this data can be passed to the templates from partials handlebars template, for this implementation please refer "src/partials/listcomponent.hbs" for the rendering logic and "src/pages/datafromsource.hbs" for template and and passing data to the template file as parameter</p>
+    </div>
+
+    <div class="container">
+        <ul>
+            {{#each listitems }}
+                <li>{{item}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
