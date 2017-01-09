@@ -68,6 +68,7 @@
         .pipe(htmlmin())
         .pipe(extname())
         .pipe(app.dest('dist'));
+        //.pipe(notify({ message: 'Assemble task complete' }));
     });
 
     // Static server
@@ -79,18 +80,13 @@
         });
     });
 
-    // Default task
-    gulp.task('default', ['clean'], function() {
-      gulp.start('styles', 'scripts', 'images','assemble','browser-sync');
-    });
-
-
-
     // Watch
     gulp.task('watch', function() {
-
       // Watch .scss files
       gulp.watch('src/styles/**/*.scss', ['styles']);
+
+      // Watch .hbs files
+      gulp.watch('src/templates/**/*.hbs', ['assemble']);
 
       // Watch .js files
       gulp.watch('src/scripts/**/*.js', ['scripts']);
@@ -102,6 +98,12 @@
       livereload.listen();
 
       // Watch any files in dist/, reload on change
-      gulp.watch(['dist/**']).on('change', livereload.changed);
+      gulp.watch(['dist/**/*.*']).on('change', browserSync.reload);
 
+    });
+
+
+    // Default task
+    gulp.task('default', ['clean'], function() {
+      gulp.start('styles', 'scripts', 'images','assemble','watch','browser-sync');
     });
