@@ -1,6 +1,6 @@
 {
   "name": "gulpuix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "gulpuix is node package for the front-end developers to build web pages with ease using gulp.",
   "main": "index.js",
   "scripts": {
