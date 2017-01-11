@@ -1,0 +1,29 @@
+{
+  "name": "gulpuix",
+  "description": "gulpuix is node package for the front-end developers to build web pages with ease using gulp.",
+  "main": "index.js",
+  "authors": [
+    "Naveen Kumar PG <naveenkumarpg@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JS",
+    "Gulp",
+    "Handlebars",
+    "Jquery",
+    "Assembler."
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.1.1"
+  }
+}
