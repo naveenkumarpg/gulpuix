@@ -217,5 +217,5 @@
          * Js files as per the build config file whill get uglified, with added .min extn
          */
         gulp.task('build', function (cb) {
-          gulpSequence('clean',['styles:prod','scripts:prod','images'],'assemble')(cb)
+          gulpSequence('styles:prod','scripts:prod','assemble')(cb)
         });
